@@ -1,7 +1,6 @@
 struct LedPin {
     int pinNumber;
-    int state;
-    String type;
+    int state = 0;
 
     LedPin(int _pinNumber) {
         pinNumber = _pinNumber;
@@ -38,18 +37,21 @@ void LedPin::toggle() {
     }
 }
 
-LedPin lp(10);
+LedPin led_pin_1(10);
+LedPin led_pin_2(13);
 
 void setup() {
+    led_pin_1.setMode(OUTPUT);
+    led_pin_2.setMode(OUTPUT);
 }
 
 void loop() {
-    lp.turn(1);
+    led_pin_1.turn(1);
     delay(1000);
-    lp.turn(0);
+    led_pin_1.turn(0);
     delay(1000);
-    lp.toggle();
+    led_pin_2.toggle();
     delay(1000);
-    lp.toggle();
+    led_pin_2.toggle();
     delay(1000);
 }
