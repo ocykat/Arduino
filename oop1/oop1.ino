@@ -36,7 +36,7 @@ void setup() {
 void loop() {
     static LedPin lp(10, "out");
     lp.turnOn();
-    delay(300);
+    delay(1000);
     lp.turnOff();
-    delay(300);
+    delay(1000);
 }
